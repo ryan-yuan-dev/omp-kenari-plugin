@@ -1,6 +1,6 @@
 # omp-kenari
 
-English | [简体中文](README.zh-CN.md)
+English | [简体中文](https://github.com/ryan-yuan-dev/omp-kenari-plugin/blob/main/README.zh-CN.md)
 
 [Kenari ID](https://kenari.id) provider for the [omp](https://omp.sh) coding agent.
 

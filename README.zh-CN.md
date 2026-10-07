@@ -1,6 +1,6 @@
 # omp-kenari
 
-[English](README.md) | 简体中文
+[English](https://github.com/ryan-yuan-dev/omp-kenari-plugin/blob/main/README.md) | 简体中文
 
 [omp](https://omp.sh) 编程智能体的 [Kenari ID](https://kenari.id) provider。
 

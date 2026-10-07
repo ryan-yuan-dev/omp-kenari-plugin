@@ -191,7 +191,7 @@ response is the authority; anything the plugin does not pin gets inherited.
 | `src/index.ts` → `default` | The `ExtensionFactory`. May be async; the host awaits it. |
 | `src/client.ts` → `KenariClient` | Sole place that performs network I/O and parses wire shapes. |
 | `src/discovery.ts` → `selectKenariModels` | Sole place that decides which catalogue rows are exposed. |
-| `README.md` / `README.zh-CN.md` | User-facing docs. English is canonical; the Chinese file is a translation and must be updated in the same commit as any user-visible change. Both ship in the npm tarball. |
+| `README.md` / `README.zh-CN.md` | User-facing docs. English is canonical; the Chinese file is a translation and must be updated in the same commit as any user-visible change. Both ship in the npm tarball. Cross-references MUST be absolute URLs (`https://github.com/ryan-yuan-dev/omp-kenari-plugin/blob/main/…`): npm renders the README on `npmjs.com/package/omp-kenari`, where a relative path resolves to a 404, while an absolute one works on both hosts. |
 
 ## Runtime/Tooling Preferences
 
