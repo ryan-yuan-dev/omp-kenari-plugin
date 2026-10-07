@@ -7,6 +7,10 @@
     "type": "git",
     "url": "git+https://github.com/ryan-yuan-dev/omp-kenari-plugin.git"
   },
+  "homepage": "https://github.com/ryan-yuan-dev/omp-kenari-plugin#readme",
+  "bugs": {
+    "url": "https://github.com/ryan-yuan-dev/omp-kenari-plugin/issues"
+  },
   "type": "module",
   "keywords": [
     "omp",
