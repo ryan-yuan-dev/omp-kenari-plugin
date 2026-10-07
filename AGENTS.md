@@ -150,10 +150,10 @@ fatal to the `kenari` provider.
 **Free-lane limits are tier-dependent.** `/api/public/pricing` publishes three
 mutually exclusive `free_tier` states — `base` (new account), `next` (topped up
 past `threshold_idr`), `plan` (subscribed). Pick by account state; printing the
-base figures to a subscriber understates their RPM threefold. The topped-up tier
-is never claimed: the balance that decides it is not exposed by any endpoint this
-plugin may call, so the base figures are reported with the threshold stated
-instead. A quota window Kenari omits is unlimited, not missing.
+base figures to a subscriber understates their RPM fivefold (5 → 25 req/min).
+The topped-up tier is never claimed: the balance that decides it is not exposed
+by any endpoint this plugin may call, so the base figures are reported with the
+threshold stated instead. A quota window Kenari omits is unlimited, not missing.
 
 **Pricing.** Kenari quotes `micro_idr_per_1m_tokens` (whole rupiah × 1e6). omp's
 cost model is USD-only and has no currency field, so the live `usd_idr_rate` from
@@ -191,6 +191,7 @@ response is the authority; anything the plugin does not pin gets inherited.
 | `src/index.ts` → `default` | The `ExtensionFactory`. May be async; the host awaits it. |
 | `src/client.ts` → `KenariClient` | Sole place that performs network I/O and parses wire shapes. |
 | `src/discovery.ts` → `selectKenariModels` | Sole place that decides which catalogue rows are exposed. |
+| `README.md` / `README.zh-CN.md` | User-facing docs. English is canonical; the Chinese file is a translation and must be updated in the same commit as any user-visible change. Both ship in the npm tarball. |
 
 ## Runtime/Tooling Preferences
 

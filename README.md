@@ -1,5 +1,7 @@
 # omp-kenari
 
+English | [简体中文](README.zh-CN.md)
+
 [Kenari ID](https://kenari.id) provider for the [omp](https://omp.sh) coding agent.
 
 Export `KENARI_API_KEY` and the plugin imports Kenari's live model catalogue,
@@ -57,7 +59,7 @@ providers to work.
 
 The free-lane figures are tier-dependent and the tier is chosen by account
 state, not printed from the first entry: a subscriber sees the `plan` tier
-(15 req/min), not the new-account tier (5 req/min). A window Kenari omits is
+(25 req/min), not the new-account tier (5 req/min). A window Kenari omits is
 unlimited, not missing — zero means unlimited in their API.
 
 ## Settings
@@ -79,8 +81,8 @@ Plan membership is per-plan, not per-catalogue. Every paid plan includes
 `claude-sonnet-5`, but `claude-opus-4-7` is in no plan at all and
 `gpt-5-6-sol` only in the top two tiers. The plugin reads the account's actual
 plan from `GET /v1/account/quota` and filters against that plan's model list,
-so models the account cannot use without paying per token are hidden — 25 of
-them on a Studio plan, leaving 47.
+so models the account cannot use without paying per token are hidden — 23 of
+them on a Studio plan, leaving 49 of 72.
 
 When the plan is unknown (no subscription, or the quota endpoint failed), plan
 membership is unknown and **every** model is listed: hiding a model the account
