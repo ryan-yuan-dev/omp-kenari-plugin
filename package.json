@@ -1,0 +1,75 @@
+{
+  "name": "omp-kenari",
+  "version": "0.1.0",
+  "description": "Kenari ID provider for the omp coding agent: live model catalogue plus the Jev System One judge role",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ryan-yuan-dev/omp-kenari-plugin.git"
+  },
+  "type": "module",
+  "keywords": [
+    "omp",
+    "oh-my-pi",
+    "kenari",
+    "provider",
+    "judge",
+    "extension"
+  ],
+  "files": [
+    "src",
+    "README.md",
+    "LICENSE"
+  ],
+  "omp": {
+    "extensions": [
+      "./src/index.ts"
+    ],
+    "settings": {
+      "discoveryEnabled": {
+        "type": "boolean",
+        "default": true,
+        "description": "Import the Kenari chat catalogue from https://kenari.id/v1/models when KENARI_API_KEY is set."
+      },
+      "filterPayPerUse": {
+        "type": "boolean",
+        "default": true,
+        "description": "Hide Kenari models that are neither free nor included in a subscription plan."
+      },
+      "autoJudge": {
+        "type": "boolean",
+        "default": true,
+        "description": "Route the judge model role to Kenari's Jev System One endpoint when no judge role is configured."
+      },
+      "toolsEnabled": {
+        "type": "boolean",
+        "default": true,
+        "description": "Register the kenari_search, kenari_fetch, kenari_embed and kenari_rerank tools."
+      },
+      "startupNotice": {
+        "type": "boolean",
+        "default": true,
+        "description": "Show a one-line Kenari account summary when a session starts."
+      }
+    }
+  },
+  "scripts": {
+    "dev": "HOME=$(mktemp -d) omp models ls -e ./src/index.ts",
+    "typecheck": "tsc --noEmit",
+    "test": "bun run typecheck",
+    "smoke": "bun test/smoke.ts",
+    "verify": "bun run typecheck && bun run smoke",
+    "publish:dry": "npm publish --dry-run",
+    "prepublishOnly": "bun run typecheck"
+  },
+  "peerDependencies": {
+    "@oh-my-pi/pi-coding-agent": "18.4.0"
+  },
+  "engines": {
+    "bun": ">=1.3.14"
+  },
+  "devDependencies": {
+    "@types/bun": "^1.4.2",
+    "typescript": "^7.0.2"
+  }
+}

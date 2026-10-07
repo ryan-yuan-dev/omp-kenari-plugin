@@ -1,0 +1,23 @@
+# Dependencies (typecheck-only here; the host supplies runtime deps)
+node_modules/
+
+# omp project-local state: plans, caches, sessions.
+# Keep the project context files that omp reads at this level.
+.omp/*
+!.omp/AGENTS.md
+!.omp/RULES.md
+
+# Credentials. KENARI_API_KEY is read from the environment, never from a file here.
+.env
+.env.*
+!.env.example
+
+# TypeScript (tsc --noEmit only; no build output by design)
+*.tsbuildinfo
+
+# Logs and coverage
+*.log
+coverage/
+
+# OS noise
+.DS_Store
