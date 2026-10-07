@@ -10,15 +10,13 @@ file to write.
 ## Install
 
 ```bash
-omp plugin install github:ryan-yuan-dev/omp-kenari-plugin   # from GitHub
-omp plugin install omp-kenari                               # or from npm, once published
-omp plugin link /path/to/omp-kenari                         # local checkout
+omp plugin install omp-kenari        # from npm
+omp plugin link /path/to/omp-kenari  # local checkout
 export KENARI_API_KEY=...
 ```
 
-Distribution is git-first: the host executes `src/*.ts` directly, so the
-repository *is* the artifact — no build step and no registry in the path. The
-npm package, when published, is the same tree.
+The host executes `src/*.ts` directly — there is no build step, so the published
+package is exactly the tree you develop against.
 
 ## What it registers
 
