@@ -22,7 +22,7 @@ export KENARI_API_KEY=...
 ## 注册了什么
 
 | Provider | API | 内容 |
-|---|---|---|
+| --- | --- | --- |
 | `kenari` | `openai-completions` | `GET /v1/models` 返回的全部 chat 模型，实时发现 |
 | `kenari-judge` | `typesafe` | `jev-1-13-free`，由 `POST /v1/systemone` 提供 |
 
@@ -35,7 +35,7 @@ judge 的不动；没有密钥时也不改。该覆盖只在运行时生效，�
 ## 工具
 
 | 工具 | 端点 | 用途 |
-|---|---|---|
+| --- | --- | --- |
 | `kenari_search` | `POST /v1/web/search` | 实时网页搜索；返回排序后的标题、URL 与摘要 |
 | `kenari_fetch` | `POST /v1/web/fetch` | 把一个 URL 抓成干净的 Markdown，附带标题与外链 |
 | `kenari_embed` | `POST /v1/embeddings` | 文本向量化（默认 `bge-m3`） |
@@ -65,7 +65,7 @@ omp plugin config set omp-kenari filterPayPerUse false
 ```
 
 | 键 | 默认值 | 效果 |
-|---|---|---|
+| --- | --- | --- |
 | `discoveryEnabled` | `true` | 导入实时目录。关闭时只注册 judge provider。 |
 | `filterPayPerUse` | `true` | 只保留免费、或已包含在**你自己账户套餐**内的模型。 |
 | `autoJudge` | `true` | 注册 judge provider 并把 `judge` 角色默认指向它。 |
@@ -109,7 +109,7 @@ omp models refresh   # 或删除 ~/.omp/agent/models.db*
 ## 脚本
 
 | 脚本 | 用途 |
-|---|---|
+| --- | --- |
 | `bun run dev` | 把这个 checkout 载入一次用完即弃的 CLI 运行（`omp models ls -e`），列出注册结果。 |
 | `bun run typecheck` | `strict` 下的 `tsc --noEmit`。 |
 | `bun run test` | `typecheck` 的别名；本项目没有单元测试。 |

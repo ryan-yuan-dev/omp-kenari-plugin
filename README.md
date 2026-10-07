@@ -23,7 +23,7 @@ package is exactly the tree you develop against.
 ## What it registers
 
 | Provider | API | Contents |
-|---|---|---|
+| --- | --- | --- |
 | `kenari` | `openai-completions` | Every chat model from `GET /v1/models`, discovered live |
 | `kenari-judge` | `typesafe` | `jev-1-13-free`, served at `POST /v1/systemone` |
 
@@ -37,7 +37,7 @@ not touched without a key — the override is runtime-only and never persisted.
 ## Tools
 
 | Tool | Endpoint | Purpose |
-|---|---|---|
+| --- | --- | --- |
 | `kenari_search` | `POST /v1/web/search` | Live web search; ranked titles, URLs and snippets |
 | `kenari_fetch` | `POST /v1/web/fetch` | One URL as clean Markdown, plus title and outbound links |
 | `kenari_embed` | `POST /v1/embeddings` | Embed text (`bge-m3` by default) |
@@ -70,7 +70,7 @@ omp plugin config set omp-kenari filterPayPerUse false
 ```
 
 | Key | Default | Effect |
-|---|---|---|
+| --- | --- | --- |
 | `discoveryEnabled` | `true` | Import the live catalogue. When off, only the judge provider is registered. |
 | `filterPayPerUse` | `true` | Keep only models that are free or included in **your account's own plan**. |
 | `autoJudge` | `true` | Register the judge provider and default the `judge` role to it. |
@@ -121,7 +121,7 @@ omp models refresh   # or delete ~/.omp/agent/models.db*
 ## Scripts
 
 | Script | Purpose |
-|---|---|
+| --- | --- |
 | `bun run dev` | Load this checkout into one throwaway CLI run (`omp models ls -e`) and list what it registers. |
 | `bun run typecheck` | `tsc --noEmit` under `strict`. |
 | `bun run test` | Alias of `typecheck`; there are no unit tests. |

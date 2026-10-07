@@ -32,7 +32,7 @@ Setting `KENARI_API_KEY` is the entire configuration:
   the `typesafe` api so judgments route natively to `POST /v1/systemone`.
 - **`judge` role** — pointed at `kenari-judge/jev-1-13-free` when the role is
   unconfigured, via a runtime override that is never persisted.
-
+  
 The plugin must not require edits to `~/.omp/agent/config.yml` or
 `models.yml`; both files are user-owned and are read-only inputs here.
 
@@ -79,7 +79,7 @@ a stale plan is meant to be cleared.
 ## Key Directories
 
 | Path | Purpose |
-|---|---|
+| --- | --- |
 | `src/index.ts` | Extension factory: settings, provider registration, judge-role override, tools, command. The only entry point omp loads. |
 | `src/client.ts` | Kenari HTTP surface and wire parsing. All `unknown` → typed conversion happens here. |
 | `src/account.ts` | Account snapshot: catalogue, plan, quota, pricing, System One ids. Degrades per lookup. |
@@ -185,7 +185,7 @@ response is the authority; anything the plugin does not pin gets inherited.
 ## Important Files
 
 | File | Contract |
-|---|---|
+| --- | --- |
 | `package.json` → `omp.extensions` | Module paths the host loads. Relative, with `.ts` extension. |
 | `package.json` → `omp.settings` | Settings schema rendered by `omp plugin config list`. Adding a setting means editing both this and `src/settings.ts`. |
 | `src/index.ts` → `default` | The `ExtensionFactory`. May be async; the host awaits it. |

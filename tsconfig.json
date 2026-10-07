@@ -1,11 +1,15 @@
 {
   "compilerOptions": {
     "target": "ES2022",
-    "lib": ["ES2023"],
+    "lib": [
+      "ES2023"
+    ],
     "module": "ESNext",
     "moduleResolution": "bundler",
     "moduleDetection": "force",
-    "types": ["bun"],
+    "types": [
+      "bun"
+    ],
     "strict": true,
     "noUncheckedIndexedAccess": true,
     "exactOptionalPropertyTypes": false,
@@ -13,5 +17,8 @@
     "skipLibCheck": true,
     "noEmit": true
   },
-  "include": ["src", "test"]
+  "include": [
+    "src",
+    "test"
+  ]
 }
